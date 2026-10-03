@@ -1,5 +1,7 @@
+import PrincipalContainer from './components/principalContainer/PrincipalContainer';
+
 const App = () => {
-	return <h1>Nucleo de la aplicación</h1>;
+	return <PrincipalContainer />;
 };
 
 export default App;
