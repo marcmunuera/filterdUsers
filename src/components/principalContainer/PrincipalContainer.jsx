@@ -1,18 +1,18 @@
 import { use, useState } from 'react';
 import { USERS } from '../../constants/users';
 import UserCard from '../userCard/UserCard';
-import ButtonNext from '../buttonNext/ButtonNext';
 import ButtonCheck from '../buttonCheck/ButtonCheck';
+import FilterByName from '../filerByName/FilterByName';
 
 const PrincipalContainer = () => {
-	const [counter, setCounter] = useState(0);
-
 	const newUsers = USERS;
 	const [users, setUsers] = useState(newUsers);
 	return (
 		<div>
 			<p>Usuarios Activos</p>
 			<ButtonCheck users={users} setUsers={setUsers} />
+			<FilterByName users={users} setUsers={setUsers} />
+
 			{users.map(user => (
 				<UserCard
 					key={user.id}
@@ -21,7 +21,6 @@ const PrincipalContainer = () => {
 					userStatus={user.status}
 				/>
 			))}
-			<ButtonNext counter={counter} setCounter={setCounter} />
 		</div>
 	);
 };
