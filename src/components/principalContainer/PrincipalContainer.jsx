@@ -5,13 +5,13 @@ import ButtonCheck from '../buttonCheck/ButtonCheck';
 import FilterByName from '../filerByName/FilterByName';
 
 const PrincipalContainer = () => {
-	const newUsers = USERS;
+	const newUsers = [...USERS];
 	const [users, setUsers] = useState(newUsers);
 	return (
 		<div>
 			<p>Usuarios Activos</p>
-			<ButtonCheck users={users} setUsers={setUsers} />
-			<FilterByName users={users} setUsers={setUsers} />
+			<ButtonCheck users={newUsers} setUsers={setUsers} />
+			<FilterByName newUsers={newUsers} setUsers={setUsers} />
 
 			{users.map(user => (
 				<UserCard
